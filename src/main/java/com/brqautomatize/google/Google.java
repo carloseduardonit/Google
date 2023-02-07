@@ -77,9 +77,7 @@ public class Google {
 
     public static void pesquisar(int opção, String conteudo, String apoio) {
         switch (opção) {
-            case 0:
-                JOptionPane.showMessageDialog(null, "Preencher o campo [Tipo de Pesquisa]");
-                break;
+           
             case 1:
                 getGoogle();
                 pesquisarComum(conteudo);

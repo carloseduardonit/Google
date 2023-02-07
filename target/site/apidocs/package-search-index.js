@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.brqautomatize.google"},{"l":"com.brqautomatize.google.drive"}];updateSearchResults();

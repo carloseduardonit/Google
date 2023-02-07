@@ -11,13 +11,13 @@ Cenario:  <ID> Realizar a pesquisa
     E preencher o campo [O que desejar pesquisar?]
     E selecionar a opção <opção> o campo [Tipo de Pesquisa]
        Mas se campo [Tipo de Pesquisa] tiver com valor "excluir uma palavra" 
-       preencher o campo []
+       preencher o campo [Qual termo quer remover?]
     E clicar no botão [pesquisar]
     Entao o sistema carregar  
 
     Exemplos: Tipo de Pesquisa https://resultadosdigitais.com.br/marketing/pesquisa-avancada-google/
      |ID| Tipo de Pesquisa     | comando|
-     |00| Nenhuma selecionar   |        |
+     |00| Nenhuma selecionar   |  ERRO  |
      |01| comum                |        |
      |02| uma frase específica | """    |
      |03| excluir uma palavra  | "-"    |
