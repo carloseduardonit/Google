@@ -19,9 +19,16 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
  */
 public abstract class Drive {
 
+    static WebDriver web = null;
+
     public static WebDriver getDriverChorme() {
         ChromeDriver chrome = new ChromeDriver();
         return chrome;
+    }
+
+    public WebDriver setUrl(String site) {
+        web.get(site);
+        return web;
     }
 
     public static WebDriver getDriver() {
@@ -42,7 +49,7 @@ public abstract class Drive {
     }
 
     public static WebDriver getDriver(int opção) {
-        WebDriver web = null;
+
         switch (opção) {
             case 1 -> {
                 JOptionPane.showInternalMessageDialog(null, "Voce escoheu Chrome!!!");
@@ -89,5 +96,17 @@ public abstract class Drive {
                 } while (web == null);
             }
         }
+    }
+
+    public static void fecharDriver() {
+        int resposta = -1;
+        do {
+            resposta = JOptionPane.showConfirmDialog(null, web, "Fechar a pesquisar", 0, 0);
+            if (resposta == 0) {
+                web.close();
+                web.quit();
+                System.exit(10);
+            }
+        } while (true);
     }
 }
