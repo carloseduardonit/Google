@@ -105,7 +105,7 @@ public abstract class Drive {
             if (resposta == 0) {
                 web.close();
                 web.quit();
-                System.exit(10);
+                System.exit(1000);
             }
         } while (true);
     }

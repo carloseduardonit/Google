@@ -6,13 +6,16 @@ package com.brqautomatize.google.view;
 
 import com.brqautomatize.google.Google;
 import com.brqautomatize.google.drive.Drive;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Carlos
  */
 public class TelaPesquisador extends javax.swing.JFrame {
-int opcao;
+
+    int opcao;
+
     /**
      * Creates new form TelaPesquisador
      */
@@ -145,15 +148,28 @@ int opcao;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
-         opcao = jComboBox1.getSelectedIndex();   
         String conteudo = txtConteudo.getText();
-        String apoio = txtConteudo1.getText();
-        System.out.println(opcao + conteudo + apoio);
-        Google.pesquisar(opcao, conteudo, apoio);
+        if (conteudo.isBlank()) {
+            JOptionPane.showMessageDialog(rootPane, " Informe campo "+lblPesquisar.getText());
+        } else {
+            String apoio = txtConteudo1.getText();
+            try {
+                opcao = jComboBox1.getSelectedIndex();
+                System.out.println(opcao + conteudo + apoio);
+                Google.pesquisar(opcao, conteudo, apoio);
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(null, "Informe um valor numero sem casa decimal!!!", "Erro!", 0);
+                System.out.println("com.brqautomatize.google.view.TelaPesquisador.btPesquisarActionPerformed(): " + nfe);
+                btPesquisarActionPerformed(evt);
+            } catch (Exception e) {
+                System.out.println("com.brqautomatize.google.view.TelaPesquisador.btPesquisarActionPerformed(): " + e);
+            }
+        }
+
     }//GEN-LAST:event_btPesquisarActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        opcao = jComboBox1.getSelectedIndex();   
+        opcao = jComboBox1.getSelectedIndex();
         if (opcao == 3) {
             txtConteudo1.setEditable(true);
             txtConteudo1.setEnabled(true);
