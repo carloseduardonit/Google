@@ -6,7 +6,6 @@ package com.brqautomatize.google;
 
 import com.brqautomatize.google.drive.Drive;
 import com.brqautomatize.google.view.TelaPesquisador;
-import java.sql.DriverManager;
 import java.time.Duration;
 import javax.swing.JOptionPane;
 import org.openqa.selenium.By;
