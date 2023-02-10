@@ -13,7 +13,8 @@ Cenario:  <ID> Realizar a pesquisa
        Mas se campo [Tipo de Pesquisa] tiver com valor "excluir uma palavra" 
        preencher o campo [Qual termo quer remover?]
     E clicar no botão [pesquisar]
-    Entao o sistema carregar  
+    Entao o sistema carregar navegador
+ 
 
     Exemplos: Tipo de Pesquisa https://resultadosdigitais.com.br/marketing/pesquisa-avancada-google/
      |ID| Tipo de Pesquisa     | comando|
